@@ -48,8 +48,8 @@ pub fn read_config(config_path: &str) -> Result<HashMap<String, String>, String>
 
             // Handle special commands
             if point.len() > 8 {
-                println!(">>> [{}]", &point[0..7]);
-                if &point[0..7] == "%include" {
+                println!(">>> [{}]", &point[0..8]);
+                if &point[0..8] == "%include" {
                     println!("%include statement found");
                     let mut alt_lines = point.split_whitespace();
                     let alt_line = alt_lines.next();
