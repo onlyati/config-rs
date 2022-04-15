@@ -68,7 +68,7 @@ pub fn read_config(config_path: &str) -> Result<HashMap<String, String>, String>
     let config_string: String;
     match config_data {
         Ok(r) => config_string = r,
-        Err(e) => return Err(format!("Error during reading: {}", config_path)),
+        Err(_) => return Err(format!("Error during reading: {}", config_path)),
     }
 
     // Create HashMap
@@ -108,7 +108,7 @@ pub fn read_config(config_path: &str) -> Result<HashMap<String, String>, String>
             if point.len() > 8 {
                 if &point[0..8] == "%include" {
                     let mut alt_lines = point.split_whitespace();
-                    let alt_line = alt_lines.next();
+                    let _ = alt_lines.next();
                     let alt_line = alt_lines.next();
                     if let Some(l) = alt_line {
                         if &l[0..1] == "/" {
