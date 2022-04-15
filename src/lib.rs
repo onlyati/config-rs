@@ -49,10 +49,12 @@ pub fn read_config(config_path: &str) -> Result<HashMap<String, String>, String>
             // Handle special commands
             if point.len() > 8 {
                 if &point[0..7] == "%include" {
+                    println!("%include statement found");
                     let mut alt_lines = point.split_whitespace();
                     let alt_line = alt_lines.next();
                     let alt_line = alt_lines.next();
                     if let Some(l) = alt_line {
+                        println!("Path is: {}", l);
                         if &l[0..1] == "/" {
                             // Absolute paht
                             let alt_config = read_config(l);
