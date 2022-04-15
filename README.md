@@ -30,7 +30,7 @@ port = 3800
 ```
 
 ## Example for call
-```
+```rust
 fn main() {
         let config = onlyati_config::read_config("/home/user/test.conf");
         if let Ok(conf) = &config {
