@@ -67,8 +67,7 @@ pub fn read_config(config_path: &str) -> Result<HashMap<String, String>, String>
                         }
                         else
                         {
-                            // Relative path
-                            let alt_config = read_config(format!("{}/{}", config_path, l).as_str());
+                            return Err(format!("Only absolute phat be specify behind %include statement: {}", point));
                         }
                     }
                     else {
