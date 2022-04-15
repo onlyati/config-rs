@@ -70,7 +70,7 @@ pub fn read_config(config_path: &str) -> Result<HashMap<String, String>, String>
                         }
                         else
                         {
-                            return Err(format!("{}:{} -> Only absolute path be specify behind %include statement: {}", config_path, line_number point));
+                            return Err(format!("{}:{} -> Only absolute path be specify behind %include statement: {}", config_path, line_number, point));
                         }
                     }
                     else {
