@@ -25,6 +25,12 @@ pub fn read_config(config_path: &str) -> Result<HashMap<String, String>, String>
     // Getting read lines
     while line != None {
         if let Some(v) = line {
+            // Get rid from the empty lines
+            if v.trim().is_empty() {
+                line = config_lines.next();
+                continue;
+            }
+
             // Drop comment lines
             if &v[0..1] == "*" {
                 line = config_lines.next();
