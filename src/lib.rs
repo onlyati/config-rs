@@ -2,6 +2,9 @@ use std::collections::HashMap;
 use std::path::Path;
 use std::fs;
 
+
+
+
 pub fn read_config(config_path: &str) -> Result<HashMap<String, String>, String> {
     // Return if file does not exist
     if !Path::new(config_path).exists() {
