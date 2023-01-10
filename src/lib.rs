@@ -90,7 +90,7 @@ pub fn read_config(config_path: &str) -> Result<HashMap<String, String>, String>
             }
 
             // Drop comment lines
-            if &v[0..1] == "*" {
+            if &v[0..1] == "*" || &v[0..1] == "#" {
                 line = config_lines.next();
                 continue;
             }

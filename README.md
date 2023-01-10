@@ -1,12 +1,13 @@
 # Config parser
 
-This library is made to read config files and parse them onto a HashMap<String, String> type.
+This library is made to read config files and parse them onto a HashMap<String, String> type without any further dependency.
 
 ## Syntax
 Following file is content of `/home/user/test.conf` file:
 ```
 * This is a comment line
-* Each line which begin with asterisk (*) are comment lines
+# This is too
+* Each line which begin with asterisk (*) or hash(#) are comment lines
 
 * Network settings
 port = 2022     // Everything after " //" are comments
